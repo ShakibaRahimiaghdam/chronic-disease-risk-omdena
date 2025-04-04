@@ -12,7 +12,7 @@ from src.utils import input_hints, ui_categorical, numeric_ranges
 
 
 def get_image_base64(image_path):
-    # Convert an image file to a base64 string for HTML embedding
+    """Convert an image file to a base64 string for HTML embedding"""
     with open(image_path, "rb") as f:
         data = f.read()
     return base64.b64encode(data).decode("utf-8")
