@@ -1,6 +1,10 @@
-# 🫀 Omdena San Jose, USA, Local Chapter: [Exploring the Chronic Disease Risk Using NHANES Data in U.S.](https://www.omdena.com/chapter-challenges/exploring-the-chronic-disease-risk-using-nhanes-data-in-us)
+<p align="center">
+  <img src="assets/Omdena_logo_1.png" alt="Omdena Logo" width="250"/>
+</p>
 
-> Developed and implemented by **Shakiba Rahimiaghdam** as part of the **Omdena San Jose Local Chapter** challenge, covering all core components: data preprocessing, feature selection, ML model training, imbalanced data handling, and the Streamlit UI.
+# <img src="assets/Omdena_logo_2.png" alt="Omdena Logo" width="30" style="vertical-align:middle; margin-right:8px;"/> Omdena San Jose, USA, Local Chapter: [Exploring the Chronic Disease Risk Using NHANES Data in U.S.](https://www.omdena.com/chapter-challenges/exploring-the-chronic-disease-risk-using-nhanes-data-in-us)
+
+> Developed and implemented by **Shakiba Rahimiaghdam** as part of the **Omdena San Jose, USA, Local Chapter** challenge, covering all core components: data preprocessing, imbalanced data handling, feature selection, ML model training, and the Streamlit UI.
 
 <br>
 
