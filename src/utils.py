@@ -5,26 +5,27 @@ import pandas as pd
 
 # Shared variables for UI
 input_hints = {
-    "RIDAGEYR": ("Age (years)", "Range: 0 - 100+"),
+    "RIDAGEYR": ("Age (years)?", "Range: 0 - 100+"),
     "BPQ020": ("Ever Told: High Blood Pressure?", "Select Yes or No"),
     "BPQ090D": ("Angina?", "Select Yes or No"),
     "BPQ040A": ("High Cholesterol?", "Select Yes or No"),
-    "OSQ230": ("Metal Objects in Body",
-               "Select Yes or No: Do you have any artificial joints, pins, plates, metal suture material, or other metal objects?"),
+    "OSQ230": ("Metal Objects in Body?",
+               "Do you have any artificial joints, pins, plates, metal suture material, or other metal objects?"),
     "BPQ050A": ("Taking Cholesterol Meds?", "Select Yes or No"),
-    "LBXTC": ("Total Cholesterol (mg/dL)", "Range: 100 - 300 mg/dL"),
+    "LBXTC": ("Total Cholesterol (mg/dL)?", "Range: 100 - 300 mg/dL"),
     "MCQ160A": ("Arthritis?", "Select Yes or No"),
-    "MCQ366C": ("Hip Swelling", "Select Yes or No"),
+    "MCQ366C": ("Hip Swelling?", "Select Yes or No"),
     "MCQ160P": ("Psoriatic Arthritis?", "Select Yes or No"),
-    "LBDLDLM": ("LDL-Cholesterol (mg/dL)", "Range: 0 - 300 mg/dL"),
+    "LBDLDLM": ("LDL-Cholesterol (mg/dL)?", "Range: 0 - 300 mg/dL"),
     "BPQ030": ("Taking BP Medication?", "Select Yes or No"),
     "MCQ520": ("Osteoporosis?", "Select Yes or No"),
-    "INDFMPIR": ("Poverty Income Ratio", "Range: 0 - 5+"),
-    "BMXWAIST": ("Waist Circumference (cm)", "Range: 60 - 150 cm")
+    "SMQ020": ("Smoking-Related Disease Diagnosis?", "Have you ever been told you have a smoking-related disease?"),
+    "INDFMPIR": ("Poverty Income Ratio?", "Range: 0 - 5+"),
+    "BMXWAIST": ("Waist Circumference (cm)?", "Range: 60 - 150 cm")
 }
 
 ui_categorical = ["BPQ020", "BPQ090D", "BPQ040A", "OSQ230", "BPQ050A", "MCQ160A", "MCQ366C", "MCQ160P", "BPQ030",
-                  "MCQ520"]
+                  "MCQ520", "SMQ020"]
 
 numeric_ranges = {
     "RIDAGEYR": (0, 100, 50),

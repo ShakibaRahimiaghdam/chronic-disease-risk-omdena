@@ -3,11 +3,19 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
+import base64
 
-from config import MODEL_PATH, SCALER_PATH, FEATURES_PATH, LOGO_PATH
+from config import MODEL_PATH, SCALER_PATH, FEATURES_PATH, LOGO_PATH, Omdena_LOGO_2_PATH
 from src.data_loader import load_data_and_convert
 from src.pipeline import train_pipeline_impute_first
 from src.utils import input_hints, ui_categorical, numeric_ranges
+
+
+def get_image_base64(image_path):
+    # Convert an image file to a base64 string for HTML embedding
+    with open(image_path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode("utf-8")
 
 
 def main():
@@ -18,11 +26,39 @@ def main():
     Numeric inputs are presented with sliders (using predefined ranges), and categorical inputs are shown as Yes/No radio buttons.
     Upon submission, the inputs are processed, scaled, and the model outputs the estimated CVD risk probability.
     """
-    # Use columns to place a logo beside the title.
+    logo_base64 = get_image_base64(Omdena_LOGO_2_PATH)  # Adjust path if needed
+
+    html_block = (
+        f'<div style="display: flex; flex-direction: row; align-items: flex-start; '
+        f'background-color: #f9f9f9; padding: 20px; border-radius: 10px; '
+        f'border: 1px solid #ddd; font-family: Segoe UI, sans-serif; '
+        f'font-size: 17px; line-height: 1.6;">'
+
+        f'<div style="flex: 0 0 auto; padding-right: 20px;">'
+        f'<img src="data:image/png;base64,{logo_base64}" width="140"/>'
+        f'</div>'
+
+        f'<div style="flex: 1;">'
+        f'<h3 style="margin-top: 0; color:#0056C1;">Omdena Local Chapter Project</h3>'
+        f'<p>This user interface is part of the <strong>Omdena San Jose, USA, Local Chapter</strong> project titled '
+        f'<a href="https://www.omdena.com/chapter-challenges/exploring-the-chronic-disease-risk-using-nhanes-data-in-us" '
+        f'target="_blank" style="text-decoration: none; color:#1a73e8;">'
+        f'<em>“Exploring the Chronic Disease Risk Using NHANES Data in the U.S.”</em></a>, '
+        f'implemented by <strong>Shakiba Rahimiaghdam</strong>.</p>'
+
+        f'<p>The project developed a machine learning-based CVD risk estimation tool using '
+        f'<strong>demographic</strong>, <strong>clinical</strong>, and <strong>lifestyle</strong> data from the NHANES dataset (2017–2020). '
+        f'It empowers users to receive real-time personalized predictions, making advanced health insights more accessible.</p>'
+        f'</div>'
+        f'</div>'
+    )
+
+    st.markdown(html_block, unsafe_allow_html=True)
+
+    # Now add the heart logo + main title
     col1, col2 = st.columns([1, 4])
     with col1:
-        # Ensure the logo image exists at the specified path.
-        st.image(LOGO_PATH, width=80)
+        st.image(LOGO_PATH, width=120)
     with col2:
         st.title("Cardiovascular Disease (CVD) Risk Estimation")
 

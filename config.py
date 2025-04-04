@@ -16,3 +16,5 @@ FEATURE_IMPORTANCE_PATH = "models/feature_importance.png"
 
 # UI assets
 LOGO_PATH = "assets/heart_logo.png"
+Omdena_LOGO_1_PATH = "assets/Omdena_logo_1.png"
+Omdena_LOGO_2_PATH = "assets/Omdena_logo_2.png"
